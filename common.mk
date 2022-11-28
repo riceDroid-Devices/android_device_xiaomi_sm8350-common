@@ -27,7 +27,9 @@ $(call inherit-product, vendor/xiaomi/sm8350-common/sm8350-common-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Inherit Google Camera
+ifeq ($(WITH_GMS),true)
 $(call inherit-product, vendor/xiaomi/venus-gcam/venus-gcam-vendor.mk)
+endif
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
